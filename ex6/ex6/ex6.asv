@@ -25,7 +25,7 @@ clear ; close all; clc
 %  the data.
 %
 
-fprintf('Loading and Visualizing Data (Data Set 1) ...\n')
+fprintf('Loading and Visualizing Data ...\n')
 
 % Load from ex6data1: 
 % You will have X, y in your environment
@@ -64,7 +64,7 @@ pause;
 fprintf('\nEvaluating the Gaussian Kernel ...\n')
 
 x1 = [1 2 1]; x2 = [0 4 -1]; sigma = 2;
-sim = gaussianKernel(x1, x2, sigma)
+sim = gaussianKernel(x1, x2, sigma);
 
 fprintf(['Gaussian Kernel between x1 = [1; 2; 1], x2 = [0; 4; -1], sigma = 0.5 :' ...
          '\n\t%f\n(this value should be about 0.324652)\n'], sim);
@@ -77,7 +77,7 @@ pause;
 %  plot the data. 
 %
 
-fprintf('Loading and Visualizing Data (Data Set 2) ...\n')
+fprintf('Loading and Visualizing Data ...\n')
 
 % Load from ex6data2: 
 % You will have X, y in your environment
@@ -105,8 +105,6 @@ C = 1; sigma = 0.1;
 % We set the tolerance and max_passes lower here so that the code will run
 % faster. However, in practice, you will want to run the training to
 % convergence.
-x1=x1
-x2=x2
 model= svmTrain(X, y, C, @(x1, x2) gaussianKernel(x1, x2, sigma)); 
 visualizeBoundary(X, y, model);
 
@@ -118,7 +116,7 @@ pause;
 %  plot the data. 
 %
 
-fprintf('Loading and Visualizing Data (Data Set 3)...\n')
+fprintf('Loading and Visualizing Data ...\n')
 
 % Load from ex6data3: 
 % You will have X, y in your environment
